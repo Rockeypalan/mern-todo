@@ -7,6 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.status(200).json({ success: true, msg: "Hello, Welcome..." });
+});
+
 mongoose
   .connect(
     "mongodb+srv://Rakeshr:rakeshr123@cluster0.p48ft.mongodb.net/?retryWrites=true&w=majority",
